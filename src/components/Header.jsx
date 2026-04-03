@@ -1,15 +1,15 @@
 import React from "react";
 import { useAppContext } from "../context/AppContext";
 import { Moon, Sun, User } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { Button } from "./ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/Avatar";
+import { Button } from "./ui/Button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "./ui/select";
+} from "./ui/Select";
 
 const Header = () => {
   const { theme, toggleTheme, role, setRole } = useAppContext();

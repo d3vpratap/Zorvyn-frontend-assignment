@@ -90,16 +90,10 @@ const TransactionsList = () => {
           />
         </div>
         <Select value={filterType} onValueChange={setFilterType}>
-          <SelectTrigger
-            className="w-full sm:w-[150px]"
-            data-testid="filter-type"
-          >
+          <SelectTrigger className="w-full sm:w-37.5" data-testid="filter-type">
             <SelectValue placeholder="Type" />
           </SelectTrigger>
-          <SelectContent
-            position="popper"
-            className="z-[100] bg-white dark:bg-gray-900 border shadow-md [&>*]:bg-white dark:[&>*]:bg-gray-900"
-          >
+          <SelectContent>
             <SelectItem value="all">All Types</SelectItem>
             <SelectItem value="income">Income</SelectItem>
             <SelectItem value="expense">Expense</SelectItem>
@@ -107,15 +101,12 @@ const TransactionsList = () => {
         </Select>
         <Select value={filterCategory} onValueChange={setFilterCategory}>
           <SelectTrigger
-            className="w-full sm:w-[180px]"
+            className="w-full sm:w-45"
             data-testid="filter-category"
           >
             <SelectValue placeholder="Category" />
           </SelectTrigger>
-          <SelectContent
-            position="popper"
-            className="z-[100] bg-white dark:bg-gray-900 border shadow-md [&>*]:bg-white dark:[&>*]:bg-gray-900"
-          >
+          <SelectContent>
             <SelectItem value="all">All Categories</SelectItem>
             {categories.map((cat) => (
               <SelectItem key={cat} value={cat}>
