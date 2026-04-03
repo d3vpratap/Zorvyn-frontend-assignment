@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useAppContext } from "../context/AppContext";
 import { Button } from "./ui/button";
-import { Input } from "./ui/Input";
-import { Label } from "./ui/Label";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
 import {
   Dialog,
   DialogContent,
