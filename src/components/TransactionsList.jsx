@@ -96,7 +96,10 @@ const TransactionsList = () => {
           >
             <SelectValue placeholder="Type" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent
+            position="popper"
+            className="z-[100] bg-white dark:bg-gray-900 border shadow-md [&>*]:bg-white dark:[&>*]:bg-gray-900"
+          >
             <SelectItem value="all">All Types</SelectItem>
             <SelectItem value="income">Income</SelectItem>
             <SelectItem value="expense">Expense</SelectItem>
@@ -109,7 +112,10 @@ const TransactionsList = () => {
           >
             <SelectValue placeholder="Category" />
           </SelectTrigger>
-          <SelectContent>
+          <SelectContent
+            position="popper"
+            className="z-[100] bg-white dark:bg-gray-900 border shadow-md [&>*]:bg-white dark:[&>*]:bg-gray-900"
+          >
             <SelectItem value="all">All Categories</SelectItem>
             {categories.map((cat) => (
               <SelectItem key={cat} value={cat}>

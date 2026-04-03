@@ -15,49 +15,48 @@ const Header = () => {
   const { theme, toggleTheme, role, setRole } = useAppContext();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
-              <span className="text-white font-bold text-lg">F</span>
+        <div className="flex flex-wrap items-center justify-between gap-2 sm:gap-4">
+          {/* Left */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+              <span className="text-white font-bold text-sm sm:text-lg">F</span>
             </div>
-            <h1 className="text-xl font-bold tracking-tight">FinanceHub</h1>
+
+            <h1 className="text-lg sm:text-xl font-bold tracking-tight">
+              FinanceHub
+            </h1>
           </div>
 
-          <div className="flex items-center gap-4">
+          {/* Right */}
+          <div className="flex items-center gap-2 sm:gap-4">
             <Select value={role} onValueChange={setRole}>
-              <SelectTrigger className="w-[130px]" data-testid="role-switcher">
+              <SelectTrigger className="w-[90px] sm:w-[130px]">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="admin" data-testid="role-option-admin">
-                  Admin
-                </SelectItem>
-                <SelectItem value="viewer" data-testid="role-option-viewer">
-                  Viewer
-                </SelectItem>
+
+              <SelectContent
+                position="popper"
+                className="z-[100] bg-white dark:bg-gray-900 border shadow-md"
+              >
+                <SelectItem value="admin">Admin</SelectItem>
+                <SelectItem value="viewer">Viewer</SelectItem>
               </SelectContent>
             </Select>
 
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={toggleTheme}
-              data-testid="theme-toggle"
-              className="btn-hover"
-            >
+            <Button variant="ghost" size="icon" onClick={toggleTheme}>
               {theme === "light" ? (
-                <Moon className="h-5 w-5" />
+                <Moon className="h-4 w-4 sm:h-5 sm:w-5" />
               ) : (
-                <Sun className="h-5 w-5" />
+                <Sun className="h-4 w-4 sm:h-5 sm:w-5" />
               )}
             </Button>
 
-            <Avatar data-testid="user-avatar">
-              <AvatarImage src="https://images.pexels.com/photos/31880922/pexels-photo-31880922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
+            <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
+              <AvatarImage src="https://images.pexels.com/photos/31880922/pexels-photo-31880922.jpeg" />
               <AvatarFallback>
-                <User className="h-5 w-5" />
+                <User className="h-4 w-4 sm:h-5 sm:w-5" />
               </AvatarFallback>
             </Avatar>
           </div>

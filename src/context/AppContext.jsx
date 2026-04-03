@@ -19,27 +19,25 @@ export const AppProvider = ({ children }) => {
   const [filterType, setFilterType] = useState("all");
   const [filterCategory, setFilterCategory] = useState("all");
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme);
-      if (savedTheme === "dark") {
-        document.documentElement.classList.add("dark");
-      }
-    }
-    setTransactions(mockTransactions);
-  }, []);
+useEffect(() => {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  setTheme(savedTheme);
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
+  document.documentElement.classList.toggle("dark", savedTheme === "dark");
+
+  setTransactions(mockTransactions);
+}, []);
+
+const toggleTheme = () => {
+  setTheme((prev) => {
+    const newTheme = prev === "light" ? "dark" : "light";
+
+    document.documentElement.classList.toggle("dark", newTheme === "dark");
+
     localStorage.setItem("theme", newTheme);
-    if (newTheme === "dark") {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  };
+    return newTheme;
+  });
+};
 
   const addTransaction = (transaction) => {
     const newTransaction = {
@@ -58,7 +56,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const deleteTransaction = (id) => {
-    setTransactions(transactions.filter((t) => t.id !== id));
+    setTransactions((prev) => prev.filter((t) => t.id !== id));
   };
 
   const value = {

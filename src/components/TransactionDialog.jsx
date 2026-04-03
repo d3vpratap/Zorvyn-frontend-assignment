@@ -120,7 +120,10 @@ const TransactionDialog = ({ open, onOpenChange, transaction }) => {
                 <SelectTrigger data-testid="transaction-category-select">
                   <SelectValue placeholder="Select category" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent
+                  position="popper"
+                  className="z-[100] bg-white dark:bg-gray-900 border shadow-md [&>*]:bg-white dark:[&>*]:bg-gray-900"
+                >
                   {categories.map((cat) => (
                     <SelectItem key={cat} value={cat}>
                       {cat}
@@ -140,7 +143,10 @@ const TransactionDialog = ({ open, onOpenChange, transaction }) => {
                 <SelectTrigger data-testid="transaction-type-select">
                   <SelectValue />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent
+                  position="popper"
+                  className="z-[100] bg-white dark:bg-gray-900 border shadow-md [&>*]:bg-white dark:[&>*]:bg-gray-900"
+                >
                   <SelectItem value="income">Income</SelectItem>
                   <SelectItem value="expense">Expense</SelectItem>
                 </SelectContent>
