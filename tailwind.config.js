@@ -1,0 +1,41 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        text: "var(--text)",
+        "text-h": "var(--text-h)",
+        bg: "var(--bg)",
+        border: "var(--border)",
+        "code-bg": "var(--code-bg)",
+        accent: "var(--accent)",
+        "accent-bg": "var(--accent-bg)",
+        "accent-border": "var(--accent-border)",
+        "social-bg": "var(--social-bg)",
+      },
+      fontFamily: {
+        sans: "var(--sans)",
+        heading: "var(--heading)",
+        mono: "var(--mono)",
+      },
+      fontSize: {
+        base: "18px",
+      },
+      lineHeight: {
+        normal: "145%",
+      },
+      letterSpacing: {
+        normal: "0.18px",
+      },
+      boxShadow: {
+        DEFAULT: "var(--shadow)",
+      },
+    },
+  },
+  plugins: [],
+  darkMode: "class",
+}

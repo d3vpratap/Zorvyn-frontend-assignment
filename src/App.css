@@ -1,0 +1,31 @@
+.recharts-wrapper {
+  margin: 0 auto;
+}
+
+.recharts-surface {
+  overflow: visible;
+}
+
+.transaction-row {
+  transition: background-color 0.2s ease-out;
+}
+
+.transaction-row:hover {
+  background-color: hsl(var(--muted) / 0.5);
+}
+
+.stat-card {
+  transition: all 0.2s ease-out;
+}
+
+.stat-card:hover {
+  transform: translateY(-1px);
+}
+
+.btn-hover {
+  transition: all 0.2s ease-out;
+}
+
+.btn-hover:hover {
+  transform: translateY(-1px);
+}
