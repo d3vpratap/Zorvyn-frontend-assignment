@@ -71,7 +71,7 @@ const TransactionDialog = ({ open, onOpenChange, transaction }) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent data-testid="transaction-dialog">
+      <DialogContent className="bg-white dark:bg-gray-900 border shadow-lg" data-testid="transaction-dialog">
         <DialogHeader>
           <DialogTitle>
             {transaction ? "Edit Transaction" : "Add Transaction"}
