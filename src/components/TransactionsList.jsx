@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { useAppContext } from "../context/AppContext";
 import { Search, Plus, Pencil, Trash2 } from "lucide-react";
-import { Button } from "./ui/Button";
+import { Button } from "./ui/button";
 import { Input } from "./ui/Input";
 import {
   Select,
